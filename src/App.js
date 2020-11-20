@@ -1,17 +1,13 @@
-import { Switch, Route } from 'react-router-dom'
-import { Hello } from 'components/Hello'
+import React from 'react'
+import { AuthenticatedApp } from './authenticated-app'
+import { UnauthenticatedApp } from './unauthenticated-app'
 
 function App() {
+  const user = false
   return (
-    <div className="App">
-      <Hello />
-      <Switch>
-        <Route
-          path="/"
-          render={() => <div className="text-green-500">Home</div>}
-        />
-      </Switch>
-    </div>
+    <React.Suspense fallback={<div>Loading...</div>}>
+      {user ? <AuthenticatedApp /> : <UnauthenticatedApp />}
+    </React.Suspense>
   )
 }
 
