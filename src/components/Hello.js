@@ -8,7 +8,7 @@ const HELLO = gql`
 `
 
 export function Hello() {
-  const [message, setMessage] = useState('smisland island for smorgus')
+  const [message, setMessage] = useState('smisland island')
   useQuery(HELLO, {
     onCompleted: (data) => {
       setMessage(data.hello)
