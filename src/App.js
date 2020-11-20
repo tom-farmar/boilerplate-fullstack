@@ -2,7 +2,7 @@ import React from 'react'
 import { AuthenticatedApp } from './authenticated-app'
 import { UnauthenticatedApp } from './unauthenticated-app'
 
-function App() {
+export function App() {
   const user = false
   return (
     <React.Suspense fallback={<div>Loading...</div>}>
@@ -10,5 +10,3 @@ function App() {
     </React.Suspense>
   )
 }
-
-export default App
